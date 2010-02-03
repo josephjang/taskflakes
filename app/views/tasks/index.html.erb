@@ -2,25 +2,20 @@
 
 <table>
 	<tr>
-		<td>Title</td>
-		<td>Description</td>
-		<td>Owner</td>
-		<td>Project</td>
-		<td>Start Date</td>
-		<td>Finish Date</td>
-		<td>Est. Start Date</td>
-		<td>Est. Finish Date</td>
-		<td>Duration</td>
-		<td>Est. Duration</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<th>Title</th>
+		<th>Owner</th>
+		<th>Project</th>
+		<th>Start Date</th>
+		<th>Finish Date</th>
+		<th>Est. Start Date</th>
+		<th>Est. Finish Date</th>
+		<th>Duration</th>
+		<th>Est. Duration</th>
 	</tr>
 
 <% @tasks.each do |task| %>
 	<tr>
 		<td> <%=h task.title %> </td>
-		<td> <%=h task.description %> </td>
 		<td> <%=h task.owner %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : nil %> </td>
 		<td> <%=h task.start_date %> </td>

@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Description</th>
     <th>Start date</th>
     <th>End date</th>
     <th>Estimated start date</th>
@@ -14,7 +13,6 @@
 <% @projects.each do |project| %>
   <tr>
     <td><%=h project.name %></td>
-    <td><%=h project.description %></td>
     <td><%=h project.start_date %></td>
     <td><%=h project.end_date %></td>
     <td><%=h project.estimated_start_date %></td>
