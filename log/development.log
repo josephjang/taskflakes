@@ -1,0 +1,870 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091204100148)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "start_date" date, "finish_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091204100148')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091204100148)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091204100148)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (11.6ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "start_date" date, "finish_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (18.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (32.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (84.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091204100148')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "start_date" date, "finish_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091204100148')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091204100148)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+
+
+Processing TaskController#index (for 127.0.0.1 at 2010-02-03 18:35:36) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create and list):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 18:35:42) [GET]
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#create (for 127.0.0.1 at 2010-02-03 18:35:55) [GET]
+  [4;35;1mTask Create (0.0ms)[0m   [0mSQLite3::SQLException: tasks.title may not be NULL: INSERT INTO "tasks" ("start_date", "created_at", "title", "updated_at", "description", "finish_date") VALUES(NULL, '2010-02-03 09:35:55', NULL, '2010-02-03 09:35:55', NULL, NULL)[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: tasks.title may not be NULL: INSERT INTO "tasks" ("start_date", "created_at", "title", "updated_at", "description", "finish_date") VALUES(NULL, '2010-02-03 09:35:55', NULL, '2010-02-03 09:35:55', NULL, NULL)):
+  app/controllers/task_controller.rb:5:in `create'
+
+Rendered rescues/_trace (117.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaskController#create (for 127.0.0.1 at 2010-02-03 18:36:08) [GET]
+  Parameters: {"title"=>"test"}
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("start_date", "created_at", "title", "updated_at", "description", "finish_date") VALUES(NULL, '2010-02-03 09:36:08', 'test', '2010-02-03 09:36:08', NULL, NULL)[0m
+
+ActionView::MissingTemplate (Missing template task/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 18:36:25) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:12:42) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:13:42) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:14:04) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:14:13) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 76ms (View: 7, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:14:14) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:15:06) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+
+ActionView::TemplateError (undefined method `owner' for #<Task:0x104429e10>) on line #18 of app/views/task/list.html.erb:
+15: 			<tr>
+16: 				<td> <%=h task.title %> </td>
+17: 				<td> <%=h task.description %> </td>
+18: 				<td> <%=h task.owner %> </td>
+19: 				<td> <%=h task.project %> </td>
+20: 			</tr>
+21: 			<% end %>
+
+    app/views/task/list.html.erb:18
+    app/views/task/list.html.erb:14:in `each'
+    app/views/task/list.html.erb:14
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:15:39) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+
+ActionView::TemplateError (undefined method `project' for #<Task:0x1041cda40>) on line #19 of app/views/task/list.html.erb:
+16: 				<td> <%=h task.title %> </td>
+17: 				<td> <%=h task.description %> </td>
+18: 				<td> <%=h task.start_date%> </td>
+19: 				<td> <%=h task.project %> </td>
+20: 			</tr>
+21: 			<% end %>
+22: 		</table>
+
+    app/views/task/list.html.erb:19
+    app/views/task/list.html.erb:14:in `each'
+    app/views/task/list.html.erb:14
+
+Rendered rescues/_trace (110.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:15:48) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+
+ActionView::TemplateError (undefined method `end_date' for #<Task:0x10437ba18>) on line #19 of app/views/task/list.html.erb:
+16: 				<td> <%=h task.title %> </td>
+17: 				<td> <%=h task.description %> </td>
+18: 				<td> <%=h task.start_date %> </td>
+19: 				<td> <%=h task.end_date %> </td>
+20: 			</tr>
+21: 			<% end %>
+22: 		</table>
+
+    app/views/task/list.html.erb:19
+    app/views/task/list.html.erb:14:in `each'
+    app/views/task/list.html.erb:14
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091204100148)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "owner" varchar(255), "project" varchar(255), "start_date" date, "finish_date" date, "estimated_start_date" date, "estimated_finish_date" date, "duration" integer, "estimated_duration" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091204100148')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:16:14) [GET]
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:16:44) [GET]
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:18:26) [GET]
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:19:11) [GET]
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#create (for 127.0.0.1 at 2010-02-03 19:19:40) [GET]
+  Parameters: {"title"=>"test"}
+  [4;36;1mTask Create (0.5ms)[0m   [0;1mINSERT INTO "tasks" ("start_date", "duration", "created_at", "title", "estimated_finish_date", "estimated_duration", "updated_at", "project", "estimated_start_date", "description", "finish_date", "owner") VALUES(NULL, NULL, '2010-02-03 10:19:40', 'test', NULL, NULL, '2010-02-03 10:19:40', NULL, NULL, NULL, NULL, NULL)[0m
+
+ActionView::MissingTemplate (Missing template task/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 19:19:44) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/task/list]
+
+
+Processing TaskController#list (for 127.0.0.1 at 2010-02-03 20:56:03) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering task/list
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/task/list]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 20:56:06) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 115ms (View: 111, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-02-03 20:56:10) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 20:56:13) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 20:56:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/tasks/1/edit]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 20:56:16) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:01:37) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:01:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:01:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/tasks/1/edit]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:02:19) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:02:21) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:02:42) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:03:29) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:03:44) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:03:58) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:05:56) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:05:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+
+ActionView::TemplateError (undefined local variable or method `task' for #<ActionView::Base:0x1044522c0>) on line #4 of app/views/tasks/show.html.erb:
+1: <table>
+2: 	<tr>
+3: 		<td>Title</td>
+4: 		<td><%=h task.title %></td>
+5: 	</tr>
+6: </table>
+7: <%= link_to 'Edit', edit_task_path(@task) %> |
+
+    app/views/tasks/show.html.erb:4
+    app/controllers/tasks_controller.rb:18:in `show'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:06:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:06:12) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 77ms (View: 73, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:08:33) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:08:35) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:08:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:08:40) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:09:44) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:09:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:09:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:10:05) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-02-03 21:15:48) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+
+ActionView::TemplateError (undefined method `email' for #<Task:0x104417be8>) on line #24 of app/views/tasks/new.html.erb:
+21:   </p>
+22:   <p>
+23:   <b>Email</b><br />
+24:   <%= f. text_field :email %>
+25:   </p>
+26:   <p>
+27:   <b>Start Date</b><br />
+
+    app/views/tasks/new.html.erb:24
+    app/views/tasks/new.html.erb:3
+    app/controllers/tasks_controller.rb:29:in `new'
+
+Rendered rescues/_trace (50.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:16:06) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-02-03 21:16:09) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 155ms (View: 149, DB: 0) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-02-03 21:17:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"N17CgINQ2dd09lM4JAAtvask7YHPAVgoY7CfNL4Z3DU=", "task"=>{"duration"=>"1", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "start_date(3i)"=>"3", "title"=>"taskflakes git repository 생성", "estimated_duration"=>"60", "estimated_finish_date(1i)"=>"2010", "estimated_finish_date(2i)"=>"3", "estimated_start_date(1i)"=>"2010", "project"=>"taskflakes", "estimated_finish_date(3i)"=>"31", "estimated_start_date(2i)"=>"2", "estimated_start_date(3i)"=>"3", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"3", "description"=>"taskflakes 프로젝트의 git repository를 github에 생성하기.", "finish_date(3i)"=>"31", "owner"=>"장정호"}}
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("start_date", "duration", "created_at", "title", "estimated_finish_date", "estimated_duration", "updated_at", "project", "estimated_start_date", "description", "finish_date", "owner") VALUES('2010-02-03', 1, '2010-02-03 12:17:41', 'taskflakes git repository 생성', '2010-03-31', 60, '2010-02-03 12:17:41', 'taskflakes', '2010-02-03', 'taskflakes 프로젝트의 git repository를 github에 생성하기.', '2010-03-31', '장정호')[0m
+Redirected to http://localhost:3000/tasks/2
+Completed in 19ms (DB: 0) | 302 Found [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:17:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 2) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/2]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:17:51) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:19:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 91ms (View: 86, DB: 0) | 200 OK [http://localhost/tasks/1/edit]
+
+
+Processing TasksController#update (for 127.0.0.1 at 2010-02-03 21:21:08) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"N17CgINQ2dd09lM4JAAtvask7YHPAVgoY7CfNL4Z3DU=", "id"=>"1", "task"=>{"duration"=>"1", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "start_date(3i)"=>"3", "title"=>"tasks controller 개발", "estimated_duration"=>"1", "estimated_finish_date(1i)"=>"2010", "estimated_finish_date(2i)"=>"2", "estimated_start_date(1i)"=>"2010", "project"=>"taskflakes", "estimated_finish_date(3i)"=>"3", "estimated_start_date(2i)"=>"2", "estimated_start_date(3i)"=>"3", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"2", "description"=>"task에 대한 CRUD를 수행할 수 있는 tasks controller와 기본적인 view 개발.", "finish_date(3i)"=>"3", "owner"=>"장정호"}}
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE "tasks" SET "project" = 'taskflakes', "updated_at" = '2010-02-03 12:21:08', "estimated_duration" = 1, "start_date" = '2010-02-03', "title" = 'tasks controller 개발', "duration" = 1, "estimated_finish_date" = '2010-02-03', "estimated_start_date" = '2010-02-03', "owner" = '장정호', "finish_date" = '2010-02-03', "description" = 'task에 대한 CRUD를 수행할 수 있는 tasks controller와 기본적인 view 개발.' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/tasks/1
+Completed in 62ms (DB: 1) | 302 Found [http://localhost/tasks/1]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:21:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:21:11) [GET]
+  [4;36;1mTask Load (0.7ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:30:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+
+ActionView::TemplateError (undefined method `merge' for :include_blank:Symbol) on line #32 of app/views/tasks/edit.html.erb:
+29:   </p>
+30:   <p>
+31:   <b>Est. Start Date</b><br />
+32:   <%= f. date_select :estimated_start_date, :include_blank %>
+33:   </p>
+34:   <p>
+35:   <b>Est. Finish Date</b><br />
+
+    app/views/tasks/edit.html.erb:32
+    app/views/tasks/edit.html.erb:3
+
+Rendered rescues/_trace (110.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:30:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+ERROR: compiling _run_erb_app47views47tasks47edit46html46erb RAISED compile error
+/Users/josephjang/works/taskflakes/app/views/tasks/edit.html.erb:32: syntax error, unexpected ':', expecting ')'
+...select :estimated_start_date :include_blank ).to_s); @output...
+                              ^
+Function body:           def _run_erb_app47views47tasks47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Editing task</h1>\n\n"
+
+;  form_for(@task) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n  <b>Title</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_field :title ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Description</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_area :description ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Owner</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_field :owner ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Project</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_field :project).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Start Date</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. date_select :start_date ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Finish Date</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. date_select :finish_date ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Est. Start Date</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. date_select :estimated_start_date :include_blank ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Est. Finish Date</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. date_select :estimated_finish_date ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Duration</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_field :duration ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n  <b>Est. Duration</b><br />\n  "
+
+
+
+; @output_buffer.concat(( f. text_field :estimated_duration ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Update' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Show', @task ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', tasks_path ).to_s); @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/josephjang/works/taskflakes/app/views/tasks/edit.html.erb:56:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/josephjang/works/taskflakes/app/views/tasks/edit.html.erb:32: syntax error, unexpected ':', expecting ')'
+...select :estimated_start_date :include_blank ).to_s); @output...
+                              ^) on line #32 of app/views/tasks/edit.html.erb:
+29:   </p>
+30:   <p>
+31:   <b>Est. Start Date</b><br />
+32:   <%= f. date_select :estimated_start_date :include_blank %>
+33:   </p>
+34:   <p>
+35:   <b>Est. Finish Date</b><br />
+
+    app/views/tasks/edit.html.erb:56:in `compile!'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:32:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 31ms (View: 25, DB: 0) | 200 OK [http://localhost/tasks/1/edit]
+
+
+Processing TasksController#update (for 127.0.0.1 at 2010-02-03 21:32:29) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"N17CgINQ2dd09lM4JAAtvask7YHPAVgoY7CfNL4Z3DU=", "id"=>"1", "task"=>{"duration"=>"1", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "start_date(3i)"=>"3", "title"=>"tasks controller 개발", "estimated_duration"=>"1", "estimated_finish_date(1i)"=>"2010", "estimated_finish_date(2i)"=>"2", "estimated_start_date(1i)"=>"", "project"=>"taskflakes", "estimated_finish_date(3i)"=>"3", "estimated_start_date(2i)"=>"", "estimated_start_date(3i)"=>"", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"2", "description"=>"task에 대한 CRUD를 수행할 수 있는 tasks controller와 기본적인 view 개발.", "finish_date(3i)"=>"3", "owner"=>"장정호"}}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;35;1mTask Update (0.6ms)[0m   [0mUPDATE "tasks" SET "updated_at" = '2010-02-03 12:32:29', "estimated_start_date" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/tasks/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/tasks/1]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:32:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:32:33) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-03 21:34:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 31ms (View: 25, DB: 0) | 200 OK [http://localhost/tasks/1/edit]
+
+
+Processing TasksController#update (for 127.0.0.1 at 2010-02-03 21:34:34) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"N17CgINQ2dd09lM4JAAtvask7YHPAVgoY7CfNL4Z3DU=", "id"=>"1", "task"=>{"duration"=>"1", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "start_date(3i)"=>"3", "title"=>"tasks controller 개발", "estimated_duration"=>"1", "estimated_finish_date(1i)"=>"2010", "estimated_finish_date(2i)"=>"2", "estimated_start_date(1i)"=>"2010", "project"=>"taskflakes", "estimated_finish_date(3i)"=>"3", "estimated_start_date(2i)"=>"2", "estimated_start_date(3i)"=>"3", "finish_date(1i)"=>"", "finish_date(2i)"=>"", "description"=>"task에 대한 CRUD를 수행할 수 있는 tasks controller와 기본적인 view 개발.", "finish_date(3i)"=>"", "owner"=>"장정호"}}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE "tasks" SET "updated_at" = '2010-02-03 12:34:34', "estimated_start_date" = '2010-02-03', "finish_date" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/tasks/1
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/tasks/1]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-02-03 21:34:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:34:35) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-02-03 21:34:38) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-02-03 21:34:42) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/tasks]
