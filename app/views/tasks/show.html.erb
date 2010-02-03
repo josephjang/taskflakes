@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 		<td>Project</td>
-		<td><%=h @task.project %></td>
+		<td><%= @task.project != nil ? (link_to @task.project.name, @task.project) : nil %></td>
 	</tr>
 	<tr>
 		<td>Start Date</td>

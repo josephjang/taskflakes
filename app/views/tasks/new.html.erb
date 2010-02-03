@@ -15,9 +15,16 @@
   <b>Owner</b><br />
   <%= f. text_field :owner %>
   </p>
+  <!--
   <p>
   <b>Project</b><br />
   <%= f. text_field :project%>
+  </p>
+  -->
+  <p>
+  <b>Project</b><br />
+  <%= f. select :project_id, Project.find(:all).collect { |p|
+	  [p.name, p.id]} %>
   </p>
   <p>
   <b>Start Date</b><br />
