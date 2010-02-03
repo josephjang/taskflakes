@@ -1,4 +1,9 @@
 class ProjectsController < ApplicationController
+
+	layout 'general'
+
+	before_filter :login_required
+
   # GET /projects
   # GET /projects.xml
   def index
