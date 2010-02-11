@@ -52,3 +52,25 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+table {
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: none none none none;
+	border-color: gray gray gray gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table th {
+	border-width: 1px 1px 1px 1px;
+	padding: 5px 5px 5px 5px;
+	border-style: solid solid solid solid;
+	border-color: gray gray gray gray;
+	background-color: white;
+}
+table td {
+	border-width: 1px 1px 1px 1px;
+	padding: 5px 5px 5px 5px;
+	border-style: solid solid solid solid;
+	border-color: gray gray gray gray;
+	background-color: white;
+}

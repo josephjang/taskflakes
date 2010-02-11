@@ -2,31 +2,34 @@
 
 <table>
 	<tr>
+		<th>Project</th>
 		<th>Title</th>
 		<th>Owner</th>
-		<th>Project</th>
 		<th>Start Date</th>
 		<th>Finish Date</th>
 		<th>Est. Start Date</th>
 		<th>Est. Finish Date</th>
 		<th>Duration</th>
 		<th>Est. Duration</th>
+		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 
 <% @tasks.each do |task| %>
 	<tr>
+		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : nil %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.owner %> </td>
-		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : nil %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>
 		<td> <%=h task.estimated_start_date %> </td>
 		<td> <%=h task.estimated_finish_date %> </td>
 		<td> <%=h task.duration %> </td>
 		<td> <%=h task.estimated_duration %> </td>
-		<td><%= link_to 'Show', task %></td>
-		<td><%= link_to 'Edit', edit_task_path(task) %></td>
-		<td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td> <%= link_to 'Show', task %> </td>
+		<td> <%= link_to 'Edit', edit_task_path(task) %> </td>
+		<td> <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %> </td>
   </tr>
 <% end %>
 </table>
