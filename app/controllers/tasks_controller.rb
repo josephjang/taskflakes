@@ -15,6 +15,17 @@ class TasksController < ApplicationController
     end
   end
 
+  # GET /tasks/report
+  # GET /tasks/report.xml
+  def report
+    @tasks = Task.find(:all, :conditions => [ "status = '진행중' OR (status = '완료' AND finish_date >= ?)", 7.days.ago ], :order => "category_name, project_name, title")
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @tasks }
+    end
+  end
+
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
