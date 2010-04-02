@@ -12,19 +12,29 @@
   <%= f. text_area :description %>
   </p>
   <p>
-  <b>Owner</b><br />
-  <%= f. text_field :owner %>
+  <b>Category</b><br />
+  <%= f. text_field :category_name %>
   </p>
-  <!--
   <p>
-  <b>Project</b><br />
-  <%= f. text_field :project%>
+  <b>Project (Unapproved)</b><br />
+  <%= f. text_field :project_name %>
   </p>
-  -->
   <p>
   <b>Project</b><br />
   <%= f. select :project_id, Project.find(:all).collect { |p|
 	  [p.name, p.id]} %>
+  </p>
+  <p>
+  <b>Status</b><br />
+  <%= f. text_field :status %>
+  </p>
+  <p>
+  <b>Owner</b><br />
+  <%= f. text_field :owner %>
+  </p>
+  <p>
+  <b>Organization</b><br />
+  <%= f. text_field :organization %>
   </p>
   <p>
   <b>Start Date</b><br />
