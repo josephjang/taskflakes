@@ -7,7 +7,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all
+    #@tasks = Task.all
+    @tasks = Task.find(:all, :order => "category_name, project_name, title")
 
     respond_to do |format|
       format.html # index.html.erb
