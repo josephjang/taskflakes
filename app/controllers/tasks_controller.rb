@@ -7,8 +7,11 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    #@tasks = Task.all
-    @tasks = Task.find(:all, :order => "category_name, project_name, title")
+    if params[:owner].blank?
+        @tasks = Task.find(:all, :order => "category_name, project_name, title, finish_date")
+    else
+        @tasks = Task.find(:all, :conditions => [ "owner = ?", params[:owner] ], :order => "category_name, project_name, title, finish_date")
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +22,7 @@ class TasksController < ApplicationController
   # GET /tasks/report
   # GET /tasks/report.xml
   def report
-    @tasks = Task.find(:all, :conditions => [ "status = '진행중' OR (status = '완료' AND finish_date >= ?)", 7.days.ago ], :order => "category_name, project_name, title")
+    @tasks = Task.find(:all, :conditions => [ "status = '진행중' OR (status = '완료' AND finish_date >= ?)", 7.days.ago ], :order => "category_name, project_name, title, finish_date")
 
     respond_to do |format|
       format.html # index.html.erb
