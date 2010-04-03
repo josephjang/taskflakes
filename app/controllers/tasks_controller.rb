@@ -7,11 +7,22 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    if params[:owner].blank?
-        @tasks = Task.find(:all, :order => "category_name, project_name, title, finish_date")
-    else
-        @tasks = Task.find(:all, :conditions => [ "owner = ?", params[:owner] ], :order => "category_name, project_name, title, finish_date")
-    end
+
+      case params[:filter]
+      when "scheduled"
+          @tasks = Task.scheduled.recently_scheduled.per_project
+      when "ongoing"
+          @tasks = Task.ongoing.per_project
+      when "done"
+          @tasks = Task.done.recently_done.per_project
+      else
+          @tasks = Task.per_project
+      end
+
+      if !params[:owner].blank?
+          @tasks = @tasks.owned_by(params[:owner])
+      end
+
 
     respond_to do |format|
       format.html # index.html.erb
