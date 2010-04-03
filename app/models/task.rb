@@ -20,6 +20,17 @@ class Task < ActiveRecord::Base
         { :conditions => ["owner = ?", owner] }
     }
 
+    # filter by organization
+    named_scope :belong_to_organization, lambda { |organization|
+        { :conditions => ["organization = ?", organization ] }
+    }
+
+    # filter by project
+    named_scope :belong_to_project, lambda { |project|
+        { :conditions => ["project_name = ?", project] }
+    }
+
+
     # ordering
     named_scope :per_project, :order => "category_name, project_name, start_date, finish_date, estimated_start_date, estimated_finish_date, title"
 

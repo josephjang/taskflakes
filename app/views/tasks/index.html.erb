@@ -5,17 +5,27 @@
 <br />
 <br />
 
-Status Filter: <%= link_to 'All', :filter => 'all', :owner => params[:owner] %>
-| <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner] %>
-| <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner] %>
-| <%= link_to 'Done', :filter => 'done', :owner => params[:owner] %>
+Status Filter: <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+| <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+| <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
+| <%= link_to 'Done', :filter => 'done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
 
 <br />
 
-Owner Filter: <%= link_to 'All', :filter => params[:filter] %>
-| <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user.name %>
+Owner Filter: <%= link_to 'All', :filter => params[:filter], :organization => params[:organization], :project => params[:project] %>
+| <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user.name, :organization => params[:organization], :project => params[:project] %>
 
 <br />
+
+Organization Filter: <%= params[:organization] ? params[:organization] : 'N/A' %>
+
+<br />
+
+Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
+
+<br />
+
+<%= link_to 'Reset', tasks_path %>
 
 <br />
 
@@ -41,11 +51,11 @@ Owner Filter: <%= link_to 'All', :filter => params[:filter] %>
 <% @tasks.each do |task| %>
 	<tr>
 		<td> <%= task.category_name %> </td>
-		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
+		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : (link_to task.project_name, :filter => params[:filter], :owner => params[:owner], :organization => params[:organization], :project => task.project_name ) %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.status %> </td>
 		<td> <%=h task.owner %> </td>
-		<td> <%=h task.organization %> </td>
+		<td> <%= link_to task.organization, :filter => params[:filter], :owner => params[:owner], :organization => task.organization, :project => params[:project] %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>
 		<td> <%=h task.estimated_start_date %> </td>

@@ -19,10 +19,17 @@ class TasksController < ApplicationController
           @tasks = Task.per_project
       end
 
+      if !params[:project].blank?
+          @tasks = @tasks.belong_to_project(params[:project])
+      end
+
       if !params[:owner].blank?
           @tasks = @tasks.owned_by(params[:owner])
       end
 
+      if !params[:organization].blank?
+          @tasks = @tasks.belong_to_organization(params[:organization])
+      end
 
     respond_to do |format|
       format.html # index.html.erb
