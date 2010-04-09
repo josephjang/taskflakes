@@ -112,12 +112,26 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.xml
   def destroy
+
+    if !current_user.manager?
+        flash[:error] = "Can't destroy a task if you're not a manager"
+        respond_to do |format|
+            format.html { redirect_to :back }
+            format.xml { head :bad_request }
+        end
+
+        return
+
+    end
+
     @task = Task.find(params[:id])
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tasks_url) }
-      format.xml  { head :ok }
+        format.html { redirect_to(tasks_url) }
+        format.xml  { head :ok }
     end
+
   end
+
 end

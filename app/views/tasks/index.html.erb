@@ -45,7 +45,9 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 		<th>Est. Duration</th>
 		<th></th>
 		<th></th>
+<% if current_user.manager? %>
 		<th></th>
+<% end %>
 	</tr>
 
 <% @tasks.each do |task| %>
@@ -64,7 +66,9 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 		<td> <%=h task.estimated_duration %> </td>
 		<td> <%= link_to 'Show', task %> </td>
 		<td> <%= link_to 'Edit', edit_task_path(task) %> </td>
+<% if current_user.manager? %>
 		<td> <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %> </td>
+<% end %>
   </tr>
 <% end %>
 </table>
