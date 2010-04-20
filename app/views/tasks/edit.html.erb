@@ -22,7 +22,7 @@
   <p>
   <b>Project</b><br />
   <%= f. select :project_id, Project.find(:all).collect { |p|
-	  [p.name, p.id]} %>
+	  [p.name, p.id]}, { :include_blank => true } %>
   </p>
   <p>
   <b>Status</b><br />
