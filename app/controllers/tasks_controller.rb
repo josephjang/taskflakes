@@ -37,10 +37,21 @@ class TasksController < ApplicationController
     end
   end
 
-  # GET /tasks/report
-  # GET /tasks/report.xml
-  def report
+  # GET /tasks/report/done
+  # GET /tasks/report/done.xml
+  def report_done
     @tasks = Task.find(:all, :conditions => [ "status = '진행중' OR (status = '완료' AND finish_date >= ?)", 7.days.ago ], :order => "category_name, project_name, title, finish_date")
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @tasks }
+    end
+  end
+
+  # GET /tasks/report/todo
+  # GET /tasks/report/todo.xml
+  def report_todo
+    @tasks = Task.find(:all, :conditions => [ "status = '진행중' OR (status = '예정' AND estimated_start_date <= ?)", 7.days.from_now ], :order => "owner,category_name, project_name, title, finish_date")
 
     respond_to do |format|
       format.html # index.html.erb

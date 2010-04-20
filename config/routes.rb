@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :projects
 
-  map.connect 'tasks/report', :controller => 'tasks', :action => 'report'
+  map.connect 'tasks/report/done', :controller => 'tasks', :action => 'report_done'
+  map.connect 'tasks/report/todo', :controller => 'tasks', :action => 'report_todo'
 
   map.resources :tasks
 
