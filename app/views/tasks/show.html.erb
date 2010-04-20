@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 		<td>Category</td>
-		<td><%= @task.category_name %></td>
+		<td><%= @task.category != nil ? (link_to @task.category.name, @task.category) : @task.category_name %></td>
 	</tr>
 	<tr>
 		<td>Project</td>
