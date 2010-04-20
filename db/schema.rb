@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420083157) do
+ActiveRecord::Schema.define(:version => 20100420100317) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20100420083157) do
     t.date     "estimated_start_date"
     t.date     "estimated_finish_date"
     t.date     "creation_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
