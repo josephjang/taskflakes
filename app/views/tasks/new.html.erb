@@ -12,13 +12,9 @@
   <%= f. text_area :description %>
   </p>
   <p>
-  <b>Category (Old)</b><br />
-  <%= f. text_field :category_name %>
-  </p>
-  <p>
   <b>Category</b><br />
   <%= f. select :category_id, Category.find(:all).collect { |c|
-	  [c.name, c.id]}, { :include_blank => false } %>
+	  [c.name, c.id]}, { :include_blank => true } %>
   </p>
   <p>
   <b>Project (Unapproved)</b><br />
