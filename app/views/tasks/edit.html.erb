@@ -27,7 +27,8 @@
   </p>
   <p>
   <b>Status</b><br />
-  <%= f. text_field :status %>
+  <%= f. select :status_id, Status.find(:all).collect { |s|
+    [s.name, s.id]}, { :include_blank => false } %>
   </p>
   <p>
   <b>Owner</b><br />
