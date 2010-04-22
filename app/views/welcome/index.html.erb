@@ -33,10 +33,10 @@
 
 <% @scheduled_tasks.each do |task| %>
 	<tr>
-		<td> <%= task.category_name %> </td>
+		<td> <%= task.category.name %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%=h task.title %> </td>
-		<td> <%=h task.status %> </td>
+		<td> <%=h task.status.name %> </td>
 		<td> <%=h task.owner %> </td>
 		<td> <%=h task.organization %> </td>
 		<td> <%=h task.start_date %> </td>
@@ -81,10 +81,10 @@
 
 <% @ongoing_tasks.each do |task| %>
 	<tr>
-		<td> <%= task.category_name %> </td>
+		<td> <%= task.category.name %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%=h task.title %> </td>
-		<td> <%=h task.status %> </td>
+		<td> <%=h task.status.name %> </td>
 		<td> <%=h task.owner %> </td>
 		<td> <%=h task.organization %> </td>
 		<td> <%=h task.start_date %> </td>
@@ -128,10 +128,10 @@
 
 <% @done_tasks.each do |task| %>
 	<tr>
-		<td> <%= task.category_name %> </td>
+		<td> <%= task.category.name %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%=h task.title %> </td>
-		<td> <%=h task.status %> </td>
+		<td> <%=h task.status.name %> </td>
 		<td> <%=h task.owner %> </td>
 		<td> <%=h task.organization %> </td>
 		<td> <%=h task.start_date %> </td>

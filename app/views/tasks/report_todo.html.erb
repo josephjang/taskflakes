@@ -18,7 +18,7 @@
 
 <% @tasks.each do |task| %>
 	<tr>
-		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : task.category_name %> </td>
+		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.status.name %> </td>
