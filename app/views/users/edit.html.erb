@@ -1,0 +1,34 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+  <b>ID</b><br />
+  <%= f. text_field :login %>
+  </p>
+  <p>
+  <b>Name</b><br />
+  <%= f. text_field :name %>
+  </p>
+  <p>
+  <b>Email</b><br />
+  <%= f. text_field :email %>
+  </p>
+  <p>
+  <b>Organization</b><br />
+  <%= f. select :organization_id, Organization.find(:all).collect { |o|
+	  [o.name, o.id]}, { :include_blank => true } %>
+  </p>
+  <p>
+  <b>Manager</b><br />
+  <%= f. check_box :manager %>
+  </p>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
