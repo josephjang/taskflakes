@@ -56,7 +56,7 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : (link_to task.project_name, :filter => params[:filter], :owner => params[:owner], :organization => params[:organization], :project => task.project_name ) + ' (Unapproved)' %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.status.name %> </td>
-		<td> <%=h task.owner %> </td>
+		<td> <%=h task.owner ? task.owner.name : '-' %> </td>
 		<td> <%= link_to task.organization, :filter => params[:filter], :owner => params[:owner], :organization => task.organization, :project => params[:project] %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>

@@ -50,7 +50,7 @@
 	<% for task in @project.tasks %>
 		<tr>
 			<td><%= link_to task.title, task %></td>
-			<td><%=h task.owner %></td>
+			<td><%=h task.owner ? task.owner.name : '-' %></td>
 			<td><%=h task.start_date %></td>
 			<td><%=h task.finish_date %></td>
 			<td><%=h task.estimated_start_date %></td>

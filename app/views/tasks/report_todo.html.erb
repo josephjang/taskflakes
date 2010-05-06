@@ -22,7 +22,7 @@
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.status.name %> </td>
-		<td> <%=h task.owner %> </td>
+		<td> <%=h task.owner ? task.owner.name : '-' %> </td>
 		<td> <%=h task.organization %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>

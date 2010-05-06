@@ -3,6 +3,7 @@ class Task < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :project
 	belongs_to :status
+	belongs_to :owner, :class_name => 'User'
 
 	validates_presence_of :title
 	validates_numericality_of :duration, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => true
@@ -19,7 +20,7 @@ class Task < ActiveRecord::Base
 
     # filter by owner
     named_scope :owned_by, lambda { |owner|
-        { :conditions => ["owner = ?", owner] }
+        { :conditions => ["owner_id = ?", owner] }
     }
 
     # filter by organization

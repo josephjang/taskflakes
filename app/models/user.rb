@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
 
   belongs_to :organization
+  has_many :tasks
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
