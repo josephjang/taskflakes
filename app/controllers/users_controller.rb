@@ -1,7 +1,21 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  
+
+  layout 'general'
+
+  before_filter :login_required
+
+
+  def index
+
+      @users = User.find(:all)
+
+      respond_to do |format|
+          format.html # index.html.erb
+          format.xml  { render :xml => @users}
+      end
+  end
 
   # render new.rhtml
   def new
