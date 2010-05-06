@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   layout 'general'
 
-  before_filter :login_required
+  #before_filter :login_required
 
 
   def index
