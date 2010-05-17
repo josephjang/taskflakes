@@ -33,12 +33,12 @@
   <p>
   <b>Owner</b><br />
   <%= f. select :owner_id, User.find(:all).collect { |u|
-    [u.name, u.id]}, { :include_blank => true } %>
+    [u.name, u.id]}, { :include_blank => true, :selected => current_user.id } %>
   </p>
   <p>
   <b>Organization</b><br />
   <%= f. select :organization_id, Organization.find(:all).collect { |o|
-    [o.name, o.id]}, { :include_blank => true} %>
+    [o.name, o.id]}, { :include_blank => true, :selected => current_user.organization_id } %>
   </p>
   <p>
   <b>Start Date</b><br />
