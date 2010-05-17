@@ -27,7 +27,7 @@
 	</tr>
 	<tr>
 		<td>Organization</td>
-		<td><%= @task.organization %></td>
+		<td><%= @task.organization ? @task.organization.name : '-' %></td>
 	</tr>
 	<tr>
 		<td>Start Date</td>

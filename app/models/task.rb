@@ -4,6 +4,7 @@ class Task < ActiveRecord::Base
 	belongs_to :project
 	belongs_to :status
 	belongs_to :owner, :class_name => 'User'
+	belongs_to :organization
 
 	validates_presence_of :title
 	validates_numericality_of :duration, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => true
@@ -25,7 +26,7 @@ class Task < ActiveRecord::Base
 
     # filter by organization
     named_scope :belong_to_organization, lambda { |organization|
-        { :conditions => ["organization = ?", organization ] }
+        { :conditions => ["organization_id = ?", organization ] }
     }
 
     # filter by project

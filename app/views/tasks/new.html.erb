@@ -37,7 +37,8 @@
   </p>
   <p>
   <b>Organization</b><br />
-  <%= f. text_field :organization %>
+  <%= f. select :organization_id, Organization.find(:all).collect { |o|
+    [o.name, o.id]}, { :include_blank => true} %>
   </p>
   <p>
   <b>Start Date</b><br />
