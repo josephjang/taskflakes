@@ -31,6 +31,7 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 
 <table style="table-layout: fixed" width="1024">
     <colgroup>
+        <col width="50">
         <col width="100">
         <col width="200">
         <col width="300">
@@ -43,11 +44,9 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
         <col width="100">
         <col width="50">
         <col width="50">
-        <col width="30">
-        <col width="30">
-        <col width="50">
     </colgroup>
 	<tr>
+		<th></th>
 		<th>Category</th>
 		<th>Project</th>
 		<th>Title</th>
@@ -60,18 +59,18 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 		<th>Est. Finish Date</th>
 		<th>Duration</th>
 		<th>Est. Duration</th>
-		<th></th>
-		<th></th>
-<% if current_user.manager? %>
-		<th></th>
-<% end %>
 	</tr>
 
 <% @tasks.each do |task| %>
 	<tr>
+		<td> <%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_task_path(task) %>
+        <% if current_user.manager? %>
+		<%= link_to image_tag('vaga/file_delete.png', :border => 0), task, :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
+        </td>
 		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : (link_to task.project_name, :filter => params[:filter], :owner => params[:owner], :organization => params[:organization], :project => task.project_name ) + ' (Unapproved)' %> </td>
-		<td> <%=h task.title %> </td>
+		<td> <%= link_to task.title, task %> </td>
 		<td> <%=h task.status.name %> </td>
 		<td> <%= task.owner ? (link_to task.owner.name, :filter => params[:filter], :owner => task.owner, :organization => params[:organization], :project => params[:project]) : '-' %> </td>
 		<td> <%= task.organization ? (link_to task.organization.name, :filter => params[:filter], :owner => params[:owner], :organization => task.organization, :project => params[:project]) : '-' %> </td>
@@ -81,11 +80,6 @@ Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
 		<td> <%=h task.estimated_finish_date %> <%= if task.finish_date == nil and task.estimated_finish_date != nil and Date.today >= task.estimated_finish_date then '<i>Late!</i>' end %></td>
 		<td> <%=h task.duration %> </td>
 		<td> <%=h task.estimated_duration %> </td>
-		<td> <%= link_to 'Show', task %> </td>
-		<td> <%= link_to 'Edit', edit_task_path(task) %> </td>
-<% if current_user.manager? %>
-		<td> <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %> </td>
-<% end %>
   </tr>
 <% end %>
 </table>

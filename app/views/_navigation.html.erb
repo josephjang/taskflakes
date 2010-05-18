@@ -1,5 +1,6 @@
-<p>
-<%= link_to "Welcome", root_path %> |
+<p><span style="font-weight: bold; font-size: 20px">Taskflakes</span>
+<br />
+<%= link_to "Dashboard", root_path %> |
 <%= link_to "Categories", categories_url %> |
 <%= link_to "Projects", projects_url %> |
 <%= link_to "Tasks", tasks_url %> |
@@ -7,7 +8,8 @@
 <%= link_to "Users", users_url %> |
 <%= link_to "Organizations", organizations_url %> 
 <% if current_user %>
-	| <%= link_to "Logout", logout_path %>
+| Logged in as <%=h current_user.name %> (<%=h current_user.login %>)
+| <%= link_to "Logout", logout_path %>
 <% end %>
 </p>
 <hr />
