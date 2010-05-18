@@ -9,6 +9,8 @@ class TasksController < ApplicationController
   def index
 
       case params[:filter]
+      when "scheduled_or_ongoing"
+          @tasks = Task.scheduled_or_ongoing.recently_scheduled.per_project
       when "scheduled"
           @tasks = Task.scheduled.recently_scheduled.per_project
       when "ongoing"

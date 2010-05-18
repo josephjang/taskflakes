@@ -13,6 +13,7 @@ class Task < ActiveRecord::Base
     # filter by status
     named_scope :scheduled, :conditions => [ "status_id = 2" ]
     named_scope :ongoing, :conditions => [ "status_id = 3" ]
+    named_scope :scheduled_or_ongoing, :conditions => [ "status_id = 2 or status_id = 3" ]
     named_scope :done, :conditions => [ "status_id = 4" ]
 
     # filter by dates
