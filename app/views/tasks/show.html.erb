@@ -1,14 +1,10 @@
-<h1>Showing task #<%=h @task.id %></h1>
+<h1>Task: <%=h @task.title %></h1>
+
+<p>
+<%=h @task.description %>
+</p>
 
 <table>
-	<tr>
-		<td>Title</td>
-		<td><%=h @task.title %></td>
-	</tr>
-	<tr>
-		<td>Description</td>
-		<td><%=h @task.description %></td>
-	</tr>
 	<tr>
 		<td>Category</td>
 		<td><%= @task.category != nil ? (link_to @task.category.name, @task.category) : 'N/A' %></td>
