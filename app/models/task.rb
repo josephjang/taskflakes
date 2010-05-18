@@ -7,8 +7,8 @@ class Task < ActiveRecord::Base
 	belongs_to :organization
 
 	validates_presence_of :title
-	validates_numericality_of :duration, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => true
-	validates_numericality_of :estimated_duration, :allow_nil => true, :greater_than => 0, :only_integer => true
+	validates_numericality_of :duration, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => false
+	validates_numericality_of :estimated_duration, :allow_nil => true, :greater_than => 0, :only_integer => false
 
     # filter by status
     named_scope :scheduled, :conditions => [ "status_id = 2" ]
