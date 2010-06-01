@@ -13,8 +13,9 @@ class Task < ActiveRecord::Base
     # filter by status
     named_scope :scheduled, :conditions => [ "status_id = 2" ]
     named_scope :ongoing, :conditions => [ "status_id = 3" ]
-    named_scope :scheduled_or_ongoing, :conditions => [ "status_id = 2 or status_id = 3" ]
     named_scope :done, :conditions => [ "status_id = 4" ]
+    named_scope :scheduled_or_ongoing, :conditions => [ "status_id = 2 or status_id = 3" ]
+    named_scope :ongoing_or_done, :conditions => [ "status_id = 3 or status_id = 4" ]
 
     # filter by dates
     named_scope :recently_scheduled, :conditions => [ "estimated_start_date < ? AND estimated_finish_date >= ?", 7.days.from_now, 7.days.ago ]
