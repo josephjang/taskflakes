@@ -2,18 +2,18 @@ body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, th, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   10px;
+  font-size:   12px;
   line-height: 16px;
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
+a { color: #000; text-decoration:none; }
+a:visited { color: #000; }
 a:hover { color: #fff; background-color:#000; }
 
 .fieldWithErrors {
@@ -53,25 +53,26 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 table {
-	border-width: 1px 1px 1px 1px;
+	border-width: 1px;
 	border-spacing: 2px;
-	border-style: none none none none;
-	border-color: gray gray gray gray;
+	border-style: solid;
+	border-color: #06C;
 	border-collapse: collapse;
 	background-color: white;
 }
 table th {
-	border-width: 1px 1px 0px 1px;
+	border-width: 1px;
 	padding: 2px 3px 2px 3px;
-	border-style: solid solid solid solid;
-	border-color: gray gray gray gray;
+	border-style: solid;
+	border-color: #06C;
     color: white;
-	background-color: #444444;
+	background-color: #06C;
 }
 table td {
-	border-width: 0px 1px 0px 1px;
+	border-width: 1px;
 	padding: 2px 3px 2px 3px;
-	border-style: solid solid solid solid;
-	border-color: gray gray gray gray;
+	border-style: solid;
+	border-color: #06C;
 	background-color: white;
 }
+
