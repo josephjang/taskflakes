@@ -2,18 +2,17 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%=h category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_category_path(category) %>
+    <% if current_user.manager? %>
+    <%= link_to image_tag('vaga/file_delete.png', :border => 0), category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+    <td><%= link_to category.name, category %></td>
   </tr>
 <% end %>
 </table>
