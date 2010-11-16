@@ -10,4 +10,6 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  CalendarDateSelect.format = :iso_date
 end
