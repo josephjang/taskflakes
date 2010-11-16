@@ -1,54 +1,59 @@
-<h1>Task: <%=h @task.title %></h1>
+<h2>Task: <%=h @task.title %></h1>
+
+<h3>Description</h3>
 
 <pre>
 <%=h @task.description %>
 </pre>
 
+<h3>Details</h3>
+
 <table>
 	<tr>
-		<td>Category</td>
+		<th>Category</td>
 		<td><%= @task.category != nil ? (link_to @task.category.name, @task.category) : 'N/A' %></td>
 	</tr>
 	<tr>
-		<td>Project</td>
+		<th>Project</td>
 		<td><%= @task.project != nil ? (link_to @task.project.name, @task.project) : @task.project_name %></td>
 	</tr>
 	<tr>
-		<td>Status</td>
+		<th>Status</td>
 		<td><%= @task.status.name %></td>
 	</tr>
 	<tr>
-		<td>Owner</td>
+		<th>Owner</td>
 		<td><%= @task.owner ? @task.owner.name : '-' %></td>
 	</tr>
 	<tr>
-		<td>Organization</td>
+		<th>Organization</td>
 		<td><%= @task.organization ? @task.organization.name : '-' %></td>
 	</tr>
 	<tr>
-		<td>Start Date</td>
+		<th>Start Date</td>
 		<td><%=h @task.start_date%></td>
 	</tr>
 	<tr>
-		<td>Finish Date</td>
+		<th>Finish Date</td>
 		<td><%=h @task.finish_date%></td>
 	</tr>
 	<tr>
-		<td>Est. Start Date</td>
+		<th>Est. Start Date</td>
 		<td><%=h @task.estimated_start_date%></td>
 	</tr>
 	<tr>
-		<td>Est. Finish Date</td>
+		<th>Est. Finish Date</td>
 		<td><%=h @task.estimated_finish_date %></td>
 	</tr>
 	<tr>
-		<td>Duration</td>
+		<th>Duration</td>
 		<td><%=h @task.duration%></td>
 	</tr>
 	<tr>
-		<td>Est. Duration</td>
+		<th>Est. Duration</td>
 		<td><%=h @task.estimated_duration%></td>
 	</tr>
 </table>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

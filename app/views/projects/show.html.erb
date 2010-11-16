@@ -1,37 +1,33 @@
-<p>
-  <b>Name:</b>
-  <%=h @project.name %>
-</p>
+<h2>Project: <%=h @project.name %></h2>
 
-<p>
-  <b>Description:</b>
+<h3>Description</h3>
+<pre>
   <%=h @project.description %>
-</p>
+</pre>
 
-<p>
-  <b>Start date:</b>
-  <%=h @project.start_date %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%=h @project.end_date %>
-</p>
-
-<p>
-  <b>Estimated start date:</b>
-  <%=h @project.estimated_start_date %>
-</p>
-
-<p>
-  <b>Estimated finish date:</b>
-  <%=h @project.estimated_finish_date %>
-</p>
-
-<p>
-  <b>Creation date:</b>
-  <%=h @project.creation_date %>
-</p>
+<h3>Details</h3>
+<table>
+    <tr>
+        <th>Start date</td>
+        <td><%=h @project.start_date %></td>
+    </tr>
+    <tr>
+        <th>Finish date</td>
+        <td><%=h @project.end_date %></td>
+    </tr>
+    <tr>
+        <th>Est. Start date</td>
+        <td><%=h @project.start_date %></td>
+    </tr>
+    <tr>
+        <th>Est. Finish date</td>
+        <td><%=h @project.end_date %></td>
+    </tr>
+    <tr>
+        <th>Creation date</td>
+        <td><%=h @project.creation_date %></td>
+    </tr>
+</table>
 
 <h3>Tasks</h3>
 
