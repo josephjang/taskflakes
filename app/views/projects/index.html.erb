@@ -3,7 +3,8 @@
 <%= link_to image_tag('vaga/file_add.png', :border => 0), new_project_path %>
 
 <br />
-<br />
+
+<h3>Active Projects</h3>
 
 <table>
   <tr>
@@ -16,7 +17,7 @@
     <th>Creation date</th>
   </tr>
 
-<% @projects.each do |project| %>
+<% @active_projects.each do |project| %>
   <tr>
     <td>
         <%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_project_path(project) %>
@@ -32,6 +33,34 @@
 <% end %>
 </table>
 
+<h3>Inactive Projects</h3>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Estimated start date</th>
+    <th>Estimated finish date</th>
+    <th>Creation date</th>
+  </tr>
+
+<% @inactive_projects.each do |project| %>
+  <tr>
+    <td>
+        <%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_project_path(project) %>
+        <%= link_to image_tag('vaga/file_delete.png', :border => 0), project, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+    <td><%= link_to project.name, project %></td>
+    <td><%=h project.start_date %></td>
+    <td><%=h project.end_date %></td>
+    <td><%=h project.estimated_start_date %></td>
+    <td><%=h project.estimated_finish_date %></td>
+    <td><%=h project.creation_date %></td>
+  </tr>
+<% end %>
+</table>
 <br />
 
 <%= link_to image_tag('vaga/file_add.png', :border => 0), new_project_path %>

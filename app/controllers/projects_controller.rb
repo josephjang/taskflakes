@@ -8,6 +8,8 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index
     @projects = Project.all
+    @active_projects = Project.find(:all, :conditions => "end_date IS NULL")
+    @inactive_projects = Project.find(:all, :conditions => "end_date IS NOT NULL")
 
     respond_to do |format|
       format.html # index.html.erb
