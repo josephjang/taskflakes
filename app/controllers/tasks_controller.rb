@@ -44,7 +44,7 @@ class TasksController < ApplicationController
   # GET /tasks/report/done
   # GET /tasks/report/done.xml
   def report_done
-    @tasks = Task.find(:all, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?)", 7.days.ago ], :order => "category_id, project_name, title, finish_date")
+    @tasks = Task.find(:all, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?)", 7.days.ago ], :order => "owner_id, category_id, project_name, title, finish_date")
 
     respond_to do |format|
       format.html # index.html.erb
