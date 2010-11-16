@@ -13,23 +13,23 @@
   </p>
   <p>
     <%= f.label :start_date %><br />
-	<%= f.date_select :start_date, :include_blank => true %>
+    <%= f.calendar_date_select :start_date, :include_blank => true %>
   </p>
   <p>
     <%= f.label :end_date %><br />
-	<%= f.date_select :end_date, :include_blank => true %>
+    <%= f.calendar_date_select :end_date, :include_blank => true %>
   </p>
   <p>
     <%= f.label :estimated_start_date %><br />
-	<%= f.date_select :estimated_start_date, :include_blank => true %>
+    <%= f.calendar_date_select :estimated_start_date, :include_blank => true %>
   </p>
   <p>
     <%= f.label :estimated_finish_date %><br />
-	<%= f.date_select :estimated_finish_date, :include_blank => true %>
+    <%= f.calendar_date_select :estimated_finish_date, :include_blank => true %>
   </p>
   <p>
     <%= f.label :creation_date %><br />
-    <%= f.date_select :creation_date %>
+    <%= f.calendar_date_select :creation_date %>
   </p>
   <p>
     <%= f.submit 'Create' %>
