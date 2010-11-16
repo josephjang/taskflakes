@@ -170,7 +170,8 @@ class CalendarDateSelect
           nil
         end
 
-      tag = ActionView::Helpers::InstanceTag.new(object, method, self, nil, options.delete(:object))
+      #tag = ActionView::Helpers::InstanceTag.new(object, method, self, nil, options.delete(:object))
+      tag = ActionView::Helpers::InstanceTag.new(object, method, self, options.delete(:object))
       calendar_date_select_output(
         tag.to_input_field_tag( (calendar_options[:hidden] || calendar_options[:embedded]) ? "hidden" : "text", options), 
         calendar_options
