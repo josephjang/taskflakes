@@ -1,33 +1,37 @@
-<h1>Listing projects</h1>
+<h2>Projects</h2>
+
+<%= link_to image_tag('vaga/file_add.png', :border => 0), new_project_path %>
+
+<br />
+<br />
 
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Start date</th>
     <th>End date</th>
     <th>Estimated start date</th>
     <th>Estimated finish date</th>
     <th>Creation date</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%=h project.name %></td>
+    <td>
+        <%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_project_path(project) %>
+        <%= link_to image_tag('vaga/file_delete.png', :border => 0), project, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+    <td><%= link_to project.name, project %></td>
     <td><%=h project.start_date %></td>
     <td><%=h project.end_date %></td>
     <td><%=h project.estimated_start_date %></td>
     <td><%=h project.estimated_finish_date %></td>
     <td><%=h project.creation_date %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New project', new_project_path %>
+<%= link_to image_tag('vaga/file_add.png', :border => 0), new_project_path %>
