@@ -76,3 +76,8 @@ table td {
 	background-color: white;
 }
 
+.widthLong {
+    max-width: 640px;
+    width: 100%;
+    
+}
