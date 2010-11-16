@@ -10,6 +10,11 @@ class Task < ActiveRecord::Base
 	validates_numericality_of :duration, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => false
 	validates_numericality_of :estimated_duration, :allow_nil => true, :greater_than => 0, :only_integer => false
 
+    validates_date :start_date, :on_or_before => :finish_date, :allow_blank => true
+    validates_date :finish_date, :on_or_after => :start_date, :allow_blank => true
+    validates_date :estimated_start_date, :on_or_before => :estimated_finish_date, :allow_blank => true
+    validates_date :estimated_finish_date, :on_or_after=> :estimated_start_date, :allow_blank => true
+
     # filter by status
     named_scope :scheduled, :conditions => [ "status_id = 2" ]
     named_scope :ongoing, :conditions => [ "status_id = 3" ]
