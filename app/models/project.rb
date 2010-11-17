@@ -9,4 +9,8 @@ class Project < ActiveRecord::Base
     validates_date :estimated_finish_date, :on_or_after=> :estimated_start_date, :allow_blank => true
     validates_date :creation_date
 
+    default_value_for :creation_date do
+        Date.today
+    end
+
 end
