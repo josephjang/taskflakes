@@ -1,33 +1,38 @@
-<h1>Listing users</h1>
+<h2>Users</h1>
+
+<%= link_to image_tag('vaga/file_add.png', :border => 0), new_user_path %>
 
 <br />
 <br />
 
 <table>
 	<tr>
+		<th></th>
 		<th>ID</th>
 		<th>Name</th>
 		<th>Email</th>
         <th>Organization</th>
 		<th>Manager</th>
-		<th></th>
-		<th></th>
-		<th></th>
 	</tr>
 
 <% @users.each do |user| %>
 	<tr>
+        <td>
+            <% if current_user.manager? %>
+            <%= link_to image_tag('vaga/file_edit.png', :border => 0), edit_user_path(user) %>
+            <%= link_to image_tag('vaga/file_delete.png', :border => 0), user, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+        </td>
 		<td> <%= user.login %> </td>
 		<td> <%= user.name %> </td>
 		<td> <%= user.email %> </td>
 		<td> <%= user.organization ? user.organization.name : 'N/A' %> </td>
 		<td> <%= user.manager%> </td>
-		<td> <%= link_to 'Show', user %> </td>
-		<td> <%= link_to 'Edit', edit_user_path(user) %> </td>
-		<td> <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %> </td>
   </tr>
 <% end %>
 </table>
 
 <br />
+
+<%= link_to image_tag('vaga/file_add.png', :border => 0), new_user_path %>
 
