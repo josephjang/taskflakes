@@ -1,0 +1,29 @@
+<h2>Unapproved Projects</h2>
+
+<br />
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th># Tasks</th>
+        <th>Candidate Project</th>
+        <th></th>
+    </tr>
+    <% @unapproved_projects.each do |project| %>
+    <tr>
+        <td>
+            <%= project.project_name %>
+        </td>
+        <td>
+            <%= project.count %>
+        </td>
+        <td>
+            <%= @candidate_projects[project.project_name].name if @candidate_projects[project.project_name] %>
+        </td>
+        <td>
+            <%= link_to 'Approve', :controller => 'projects', :action => 'approve', :project => project.project_name %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+

@@ -17,6 +17,53 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def approve
+      project_name = params[:project]
+
+      @project = Project.new
+      @project.name = project_name
+
+      if !@project.save then
+          respond_to do |format|
+              flash[:error] = "Project can't be created."
+              format.html { redirect_to(:action => "unapproved") }
+              format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
+          end
+          return
+      end
+
+      tasks = Task.find(:all, :conditions => "project_id is null and project_name = '" + project_name + "'")
+      tasks.each do |task|
+          task.project_id = @project.id
+          task.save
+      end
+
+    respond_to do |format|
+        flash[:notice] = 'Project was successfully approved.'
+        format.html { redirect_to(@project) }
+        format.xml  { render :xml => @project, :status => :created, :location => @project }
+    end
+
+  end
+
+  # GET /projects/unapproved
+  def unapproved
+
+      @unapproved_projects = Task.find(:all, :select => 'project_name, count(*) count', :conditions => 'project_id is null', :group => 'project_name', :order => 'count desc')
+
+      @candidate_projects = {}
+      @unapproved_projects.each do |project|
+          candidate_project = Project.find_by_name(project.project_name)
+          @candidate_projects[project.project_name] = candidate_project
+      end
+
+      respond_to do |format|
+          format.html # unapproved.html.erb
+          format.xml  { render :xml => @unapproved_projects }
+      end
+
+  end
+
   # GET /projects/1
   # GET /projects/1.xml
   def show
