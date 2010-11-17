@@ -64,15 +64,14 @@ table th {
 	border-width: 1px;
 	padding: 2px 3px 2px 3px;
 	border-style: solid;
-	border-color: #06C;
-    color: white;
-	background-color: #06C;
+	border-color: #DDD;
+	background-color: #EEE;
 }
 table td {
 	border-width: 1px;
 	padding: 2px 3px 2px 3px;
 	border-style: solid;
-	border-color: #06C;
+	border-color: #DDD;
 	background-color: white;
 }
 
