@@ -9,6 +9,10 @@ class TasksController < ApplicationController
   def index
 
       case params[:filter]
+      when "all"
+          @tasks = Task.per_project
+      when "2weeks"
+          @tasks = Task.twoweeks.per_project
       when "scheduled_or_ongoing"
           @tasks = Task.scheduled_or_ongoing.recently_scheduled.per_project
       when "ongoing_or_done"
@@ -20,7 +24,8 @@ class TasksController < ApplicationController
       when "done"
           @tasks = Task.done.recently_done.per_project
       else
-          @tasks = Task.per_project
+          # 2weeks by default
+          @tasks = Task.twoweeks.per_project
       end
 
       if !params[:project].blank?

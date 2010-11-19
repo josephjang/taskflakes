@@ -1,34 +1,50 @@
-<h1>Tasks</h1>
+<h2>Tasks</h2>
 
 <%= link_to image_tag('vaga/file_add.png', :border => 0), new_task_path %>
 
 <br />
 
-Status Filter: <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-| <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-<!--| <%= link_to 'Scheduled+Ongoing', :filter => 'scheduled_or_ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
-| <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
-<!--| <%= link_to 'Ongoing+Done', :filter => 'ongoing_or_done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
-| <%= link_to 'Done', :filter => 'done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
-
-<br />
-
-Owner Filter: <%= link_to 'All', :filter => params[:filter], :organization => params[:organization], :project => params[:project] %>
-| <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user, :organization => params[:organization], :project => params[:project] %>
-
-<br />
-
-Organization Filter: <%= params[:organization] ? params[:organization] : 'N/A' %>
-
-<br />
-
-Project Filter: <%= params[:project] ? params[:project] : 'N/A' %>
-
-<br />
-
+    <h3>Filters</h3>
 <%= link_to 'Reset', tasks_path %>
 
-<br />
+<table>
+
+<tr>
+    <td>Status</td>
+    <td>
+        <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to '2 Weeks', :filter => '2weeks', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        <!--| <%= link_to 'Scheduled+Ongoing', :filter => 'scheduled_or_ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
+        | <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
+        <!--| <%= link_to 'Ongoing+Done', :filter => 'ongoing_or_done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
+        | <%= link_to 'Done', :filter => 'done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
+    </td>
+</tr>
+
+<tr>
+    <td>Owner</td>
+    <td>
+        <%= link_to 'All', :filter => params[:filter], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user, :organization => params[:organization], :project => params[:project] %>
+    </td>
+</tr>
+<tr>
+    <td>Organization</td>
+    <td>
+        <%= params[:organization] ? params[:organization] : 'N/A' %>
+    </td>
+</tr>
+<tr>
+    <td>Project</td>
+    <td>
+        <%= params[:project] ? params[:project] : 'N/A' %>
+    </td>
+</tr>
+   </table>
+
+
+    <h3>Tasks</h3>
 
 <table style="table-layout: fixed" width="1024">
     <colgroup>
