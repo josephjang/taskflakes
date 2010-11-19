@@ -13,7 +13,9 @@
     <td>Status</td>
     <td>
         <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to '2 Weeks', :filter => '2weeks', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to '2 Week', :filter => '2week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to 'Last Week', :filter => 'last_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to 'Next Weeks', :filter => 'next_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
         | <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
         <!--| <%= link_to 'Scheduled+Ongoing', :filter => 'scheduled_or_ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
         | <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>

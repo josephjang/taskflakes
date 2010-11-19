@@ -16,7 +16,9 @@ class Task < ActiveRecord::Base
     validates_date :estimated_finish_date, :on_or_after=> :estimated_start_date, :allow_blank => true
 
     # filter by status & dates
-    named_scope :twoweeks, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?) OR (status_id = 2 AND estimated_start_date <= ?)", 7.days.ago, 7.days.from_now ]
+    named_scope :twoweek, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?) OR (status_id = 2 AND estimated_start_date <= ?)", 7.days.ago, 7.days.from_now ]
+    named_scope :last_week, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?)", 7.days.ago ]
+    named_scope :next_week, :conditions => [ "status_id = 3 OR (status_id = 2 AND estimated_start_date <= ?)", 7.days.from_now ]
 
     # filter by status
     named_scope :scheduled, :conditions => [ "status_id = 2" ]
