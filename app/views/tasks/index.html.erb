@@ -93,8 +93,8 @@
 		<td> <%= task.organization ? (link_to task.organization.name, :filter => params[:filter], :owner => params[:owner], :organization => task.organization, :project => params[:project]) : '-' %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>
-		<td> <%=h task.estimated_start_date %> <%= if task.start_date == nil and task.estimated_start_date != nil and Date.today >= task.estimated_start_date then '<i>Late!</i>' end %></td>
-		<td> <%=h task.estimated_finish_date %> <%= if task.finish_date == nil and task.estimated_finish_date != nil and Date.today >= task.estimated_finish_date then '<i>Late!</i>' end %></td>
+		<td> <%=h task.estimated_start_date %> <%= if task.start_date == nil and task.estimated_start_date != nil and Date.today >= task.estimated_start_date then image_tag('vaga/error.png', :border => 0) end %></td>
+		<td> <%=h task.estimated_finish_date %> <%= if task.finish_date == nil and task.estimated_finish_date != nil and Date.today >= task.estimated_finish_date then image_tag('vaga/error.png', :border => 0) end %></td>
 		<td> <%=h task.duration %> </td>
 		<td> <%=h task.estimated_duration %> </td>
   </tr>
