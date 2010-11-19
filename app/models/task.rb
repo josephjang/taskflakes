@@ -47,7 +47,7 @@ class Task < ActiveRecord::Base
     }
 
     # ordering
-    named_scope :per_project, :order => "category_id, project_name, start_date, finish_date, estimated_start_date, estimated_finish_date, title"
-    named_scope :per_owner, :order => "owner_id, category_id, project_name, start_date, finish_date, estimated_start_date, estimated_finish_date, title"
+    named_scope :per_project, :order => "category_id, project_id, project_name, start_date, finish_date, estimated_start_date, estimated_finish_date, title"
+    named_scope :per_owner, :order => "owner_id, category_id, project_id, project_name, start_date, finish_date, estimated_start_date, estimated_finish_date, title"
 
 end
