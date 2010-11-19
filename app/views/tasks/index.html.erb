@@ -12,15 +12,15 @@
 <tr>
     <td>Status</td>
     <td>
-        <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to '2 Week', :filter => '2week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to 'Last Week', :filter => 'last_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to 'Next Weeks', :filter => 'next_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project] %>
-        <!--| <%= link_to 'Scheduled+Ongoing', :filter => 'scheduled_or_ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
-        | <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
-        <!--| <%= link_to 'Ongoing+Done', :filter => 'ongoing_or_done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>-->
-        | <%= link_to 'Done', :filter => 'done', :owner => params[:owner], :organization => params[:organization], :project => params[:project]  %>
+        <%= link_to 'All', :filter => 'all', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order] %>
+        | <%= link_to '2 Week', :filter => '2week', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order] %>
+        | <%= link_to 'Last Week', :filter => 'last_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order] %>
+        | <%= link_to 'Next Weeks', :filter => 'next_week', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order] %>
+        | <%= link_to 'Scheduled', :filter => 'scheduled', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order] %>
+        <!--| <%= link_to 'Scheduled+Ongoing', :filter => 'scheduled_or_ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order]  %>-->
+        | <%= link_to 'Ongoing', :filter => 'ongoing', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order]  %>
+        <!--| <%= link_to 'Ongoing+Done', :filter => 'ongoing_or_done', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order]  %>-->
+        | <%= link_to 'Done', :filter => 'done', :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => params[:order]  %>
     </td>
 </tr>
 
@@ -28,7 +28,7 @@
     <td>Owner</td>
     <td>
         <%= link_to 'All', :filter => params[:filter], :organization => params[:organization], :project => params[:project] %>
-        | <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user, :organization => params[:organization], :project => params[:project] %>
+        | <%= link_to 'Assigned to Me', :filter => params[:filter], :owner => current_user, :organization => params[:organization], :project => params[:project], :order => params[:order] %>
     </td>
 </tr>
 <tr>
@@ -41,6 +41,13 @@
     <td>Project</td>
     <td>
         <%= params[:project] ? params[:project] : 'N/A' %>
+    </td>
+</tr>
+<tr>
+    <td>Ordering</td>
+    <td>
+        <%= link_to 'Project', :filter => params[:filter], :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => 'project' %>
+        | <%= link_to 'Owner', :filter => params[:filter], :owner => params[:owner], :organization => params[:organization], :project => params[:project], :order => 'owner' %>
     </td>
 </tr>
    </table>

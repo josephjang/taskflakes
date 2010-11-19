@@ -10,26 +10,26 @@ class TasksController < ApplicationController
 
       case params[:filter]
       when "all"
-          @tasks = Task.per_project
+          @tasks = Task.all
       when "2week"
-          @tasks = Task.twoweek.per_project
+          @tasks = Task.twoweek
       when "last_week"
-          @tasks = Task.last_week.per_project
+          @tasks = Task.last_week
       when "next_week"
-          @tasks = Task.next_week.per_project
+          @tasks = Task.next_week
       when "scheduled"
-          @tasks = Task.scheduled.per_project
+          @tasks = Task.scheduled
       when "scheduled_or_ongoing"
-          @tasks = Task.scheduled_or_ongoing.per_project
+          @tasks = Task.scheduled_or_ongoing
       when "ongoing"
-          @tasks = Task.ongoing.per_project
+          @tasks = Task.ongoing
       when "ongoing_or_done"
-          @tasks = Task.ongoing_or_done.per_project
+          @tasks = Task.ongoing_or_done
       when "done"
-          @tasks = Task.done.per_project
+          @tasks = Task.done
       else
           # 2weeks by default
-          @tasks = Task.twoweek.per_project
+          @tasks = Task.twoweek
       end
 
       if !params[:project].blank?
@@ -42,6 +42,16 @@ class TasksController < ApplicationController
 
       if !params[:organization].blank?
           @tasks = @tasks.belong_to_organization(params[:organization])
+      end
+
+      case params[:order]
+      when "project"
+          @tasks = @tasks.per_project
+      when "owner"
+          @tasks = @tasks.per_owner
+      else
+          # per_project by default
+          @tasks = @tasks.per_project
       end
 
     respond_to do |format|
