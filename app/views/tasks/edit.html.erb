@@ -1,4 +1,4 @@
-<h1>Editing task</h1>
+<h2>Editing task</h2>
 
 <% form_for(@task) do |f| %>
   <%= f.error_messages %>
@@ -17,51 +17,41 @@
 	  [c.name, c.id]}, { :include_blank => true } %>
   </p>
   <p>
-  <b>Project (Unapproved)</b><br />
+  <b>Project</b><br />
+  <%= f. select :project_id, Project.find(:all).collect { |p|
+	  [p.name, p.id]}, { :include_blank => true } %>
   <%= f. text_field :project_name %>
   </p>
   <p>
-  <b>Project (Approved)</b><br />
-  <%= f. select :project_id, Project.find(:all).collect { |p|
-	  [p.name, p.id]}, { :include_blank => true } %>
+  <b>Owner/Organization</b><br />
+  <%= f. select :owner_id, User.find(:all).collect { |u|
+    [u.name, u.id]}, { :include_blank => true } %>
+  <%= f. select :organization_id, Organization.find(:all).collect { |o|
+    [o.name, o.id]}, { :include_blank => true} %>
   </p>
+<h3>Progress</h3>
   <p>
   <b>Status</b><br />
   <%= f. select :status_id, Status.find(:all).collect { |s|
     [s.name, s.id]}, { :include_blank => false } %>
   </p>
   <p>
-  <b>Owner</b><br />
-  <%= f. select :owner_id, User.find(:all).collect { |u|
-    [u.name, u.id]}, { :include_blank => true } %>
-  </p>
-  <p>
-  <b>Organization</b><br />
-  <%= f. select :organization_id, Organization.find(:all).collect { |o|
-    [o.name, o.id]}, { :include_blank => true} %>
-  </p>
-  <p>
-  <b>Start Date</b><br />
+  <b>Start/Finish Date</b><br />
   <%= f. calendar_date_select :start_date, :include_blank => true %>
-  </p>
-  <p>
-  <b>Finish Date</b><br />
   <%= f. calendar_date_select :finish_date, :include_blank => true %>
   </p>
   <p>
-  <b>Est. Start Date</b><br />
-  <%= f. calendar_date_select :estimated_start_date, :include_blank => true %>
+  <b>Duration (Hours)</b><br />
+  <%= f. text_field :duration %>
   </p>
+<h3>Schedule</h3>
   <p>
-  <b>Est. Finish Date</b><br />
+  <b>Est. Start/Finish Date</b><br />
+  <%= f. calendar_date_select :estimated_start_date, :include_blank => true %>
   <%= f. calendar_date_select :estimated_finish_date, :include_blank => true %>
   </p>
   <p>
-  <b>Duration</b><br />
-  <%= f. text_field :duration %>
-  </p>
-  <p>
-  <b>Est. Duration</b><br />
+  <b>Est. Duration (Hours)</b><br />
   <%= f. text_field :estimated_duration %>
   </p>
   <p>
