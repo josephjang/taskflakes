@@ -15,6 +15,35 @@ class Task < ActiveRecord::Base
     validates_date :estimated_start_date, :on_or_before => :estimated_finish_date, :allow_blank => true
     validates_date :estimated_finish_date, :on_or_after=> :estimated_start_date, :allow_blank => true
 
+    # custom validation
+    def validate
+
+        if status_id == 2 and (estimated_start_date.nil? and estimated_finish_date.nil?) then
+            errors.add(:estimated_start_date, "can't be blank if status is 'Scheduled'")
+            errors.add(:estimated_finish_date, "can't be blank if status is 'Scheduled'")
+        end
+
+        if status_id == 2 and !start_date.nil? then
+            errors.add(:start_date, "should be blank if status is 'Scheduled'")
+        end
+
+        if status_id == 2 and !finish_date.nil? then
+            errors.add(:finish_date, "should be blank if status is 'Scheduled'")
+        end
+
+        if status_id == 3 and start_date.nil? then
+            errors.add(:start_date, "can't be blank if status is 'Ongoing'")
+        end
+
+        if status_id == 3 and !finish_date.nil? then
+            errors.add(:finish_date, "should be blank if status is 'Ongoing'")
+        end
+
+        if status_id == 4 and finish_date.nil? then
+            errors.add(:finish_date, "can't be blank if status is 'Completed'")
+        end
+    end
+
     # filter by status & dates
     named_scope :twoweek, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?) OR (status_id = 2 AND estimated_start_date <= ?)", 7.days.ago, 7.days.from_now ]
     named_scope :last_week, :conditions => [ "status_id = 3 OR (status_id = 4 AND finish_date >= ?)", 7.days.ago ]
