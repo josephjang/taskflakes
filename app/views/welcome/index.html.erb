@@ -47,7 +47,7 @@
 		<%= link_to image_tag('vaga/file_delete.png', :border => 0), task, :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
         </td>
-		<td> <%= task.category.name %> </td>
+		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%= link_to task.title, task %> </td>
 		<td> <%=h task.status.name %> </td>
@@ -106,7 +106,7 @@
 		<%= link_to image_tag('vaga/file_delete.png', :border => 0), task, :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
         </td>
-		<td> <%= task.category.name %> </td>
+		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%= link_to task.title, task %> </td>
 		<td> <%=h task.status.name %> </td>
@@ -164,7 +164,7 @@
 		<%= link_to image_tag('vaga/file_delete.png', :border => 0), task, :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
         </td>
-		<td> <%= task.category.name %> </td>
+		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
 		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
 		<td> <%= link_to task.title, task %> </td>
 		<td> <%=h task.status.name %> </td>
