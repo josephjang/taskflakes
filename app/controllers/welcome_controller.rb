@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
             @scheduled_tasks = Task.scheduled.recently_scheduled.owned_by(current_user.id).per_project
             @ongoing_tasks = Task.ongoing.owned_by(current_user.id).per_project
             @done_tasks = Task.done.recently_done.owned_by(current_user.id).per_project
+            @undetermined_tasks = Task.undetermined.owned_by(current_user.id).per_project
         end
 
         respond_to do |format|
