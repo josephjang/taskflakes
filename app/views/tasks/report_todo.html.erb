@@ -3,33 +3,25 @@
 <table>
 	<tr>
 		<th>Category</th>
-		<th>Project</th>
 		<th>Title</th>
 		<th>Status</th>
 		<th>Owner</th>
 		<th>Organization</th>
 		<th>Start Date</th>
 		<th>Finish Date</th>
-		<th>Est. Start Date</th>
 		<th>Est. Finish Date</th>
-		<th>Duration</th>
-		<th>Est. Duration</th>
 	</tr>
 
 <% @tasks.each do |task| %>
 	<tr>
-		<td> <%= task.category != nil ? (link_to task.category.name, task.category) : 'N/A' %> </td>
-		<td> <%= task.project != nil ? (link_to task.project.name, task.project) : task.project_name %> </td>
+		<td> <%= task.category != nil ? task.category.name : 'N/A' %> </td>
 		<td> <%=h task.title %> </td>
 		<td> <%=h task.status.name %> </td>
 		<td> <%=h task.owner ? task.owner.name : '-' %> </td>
 		<td> <%=h task.organization ? task.organization.name : '-' %> </td>
 		<td> <%=h task.start_date %> </td>
 		<td> <%=h task.finish_date %> </td>
-		<td> <%=h task.estimated_start_date %> </td>
 		<td> <%=h task.estimated_finish_date %> </td>
-		<td> <%=h task.duration %> </td>
-		<td> <%=h task.estimated_duration %> </td>
   </tr>
 <% end %>
 </table>
